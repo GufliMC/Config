@@ -1,0 +1,13 @@
+dependencies {
+    api project(':common')
+
+    implementation 'com.electronwill.night-config:toml:3.6.6'
+
+    // TESTS
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}

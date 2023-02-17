@@ -1,0 +1,8 @@
+a = true
+b = 5
+
+#This explains this section.
+[c]
+	#More explanation.
+	d = ["e", "f", "g"]
+
