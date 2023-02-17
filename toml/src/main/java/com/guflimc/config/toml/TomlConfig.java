@@ -35,7 +35,8 @@ public class TomlConfig implements Config {
                 get().write(file, config);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println("Invalid config file. Please fix your formatting. ");
+            System.err.println(e.getMessage());
         }
         return config;
     }
