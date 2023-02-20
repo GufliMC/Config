@@ -30,17 +30,15 @@ public class ConfigTests {
 
     @Test
     public void writeTest() throws IOException {
-        TomlConfig config = new TomlConfig();
-        String contents = config.write(new ConfigObj());
+        String contents = TomlConfig.get().write(new ConfigObj());
         String test = new String(getClass().getClassLoader().getResourceAsStream("default.toml").readAllBytes());
         assertEquals(test, contents);
     }
 
     @Test
     public void readTest() throws IOException {
-        TomlConfig config = new TomlConfig();
         String modified = new String(getClass().getClassLoader().getResourceAsStream("modified.toml").readAllBytes());
-        ConfigObj obj = config.read(modified, new ConfigObj());
+        ConfigObj obj = TomlConfig.get().read(modified, new ConfigObj());
 
         assertFalse(obj.a);
         assertEquals(5, obj.b);
