@@ -9,6 +9,9 @@ public interface Config {
     <T> String write(T config);
 
     default <T> void write(File file, T config) throws IOException {
+        if ( !file.getParentFile().exists() && !file.getParentFile().mkdirs() ) {
+            throw new IOException("Could not create parent directories for file: " + file.getAbsolutePath());
+        }
         try (
                 FileWriter writer = new FileWriter(file);
         ) {
