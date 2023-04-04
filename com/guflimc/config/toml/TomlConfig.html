@@ -100,7 +100,7 @@ implements <a href="../common/Config.html" title="interface in com.guflimc.confi
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#get()" class="member-name-link">get</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;T</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#load(java.io.File,T)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;file,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#load(java.nio.file.Path,T)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
  T&nbsp;config)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;T</code></div>
@@ -118,7 +118,7 @@ implements <a href="../common/Config.html" title="interface in com.guflimc.confi
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-com.guflimc.config.common.Config">Methods inherited from interface&nbsp;com.guflimc.config.common.<a href="../common/Config.html" title="interface in com.guflimc.config.common">Config</a></h3>
-<code><a href="../common/Config.html#read(java.io.File,T)">read</a>, <a href="../common/Config.html#read(java.io.InputStream,T)">read</a>, <a href="../common/Config.html#read(java.io.Reader,T)">read</a>, <a href="../common/Config.html#write(java.io.File,T)">write</a>, <a href="../common/Config.html#write(java.io.OutputStream,T)">write</a>, <a href="../common/Config.html#write(java.io.Writer,T)">write</a></code></div>
+<code><a href="../common/Config.html#read(java.io.InputStream,T)">read</a>, <a href="../common/Config.html#read(java.io.Reader,T)">read</a>, <a href="../common/Config.html#read(java.nio.file.Path,T)">read</a>, <a href="../common/Config.html#write(java.io.OutputStream,T)">write</a>, <a href="../common/Config.html#write(java.nio.file.Path,T)">write</a></code></div>
 </section>
 </li>
 </ul>
@@ -137,20 +137,10 @@ implements <a href="../common/Config.html" title="interface in com.guflimc.confi
 </section>
 </li>
 <li>
-<section class="detail" id="load(java.io.File,T)">
-<h3 id="load(java.io.File,java.lang.Object)">load</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;file,
+<section class="detail" id="load(java.nio.file.Path,T)">
+<h3 id="load(java.nio.file.Path,java.lang.Object)">load</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
  T&nbsp;config)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="write(T)">
-<h3 id="write(java.lang.Object)">write</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">write</span><wbr><span class="parameters">(T&nbsp;obj)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../common/Config.html#write(T)">write</a></code>&nbsp;in interface&nbsp;<code><a href="../common/Config.html" title="interface in com.guflimc.config.common">Config</a></code></dd>
-</dl>
 </section>
 </li>
 <li>
@@ -161,6 +151,16 @@ implements <a href="../common/Config.html" title="interface in com.guflimc.confi
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../common/Config.html#read(java.lang.String,T)">read</a></code>&nbsp;in interface&nbsp;<code><a href="../common/Config.html" title="interface in com.guflimc.config.common">Config</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="write(T)">
+<h3 id="write(java.lang.Object)">write</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">write</span><wbr><span class="parameters">(T&nbsp;obj)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../common/Config.html#write(T)">write</a></code>&nbsp;in interface&nbsp;<code><a href="../common/Config.html" title="interface in com.guflimc.config.common">Config</a></code></dd>
 </dl>
 </section>
 </li>
