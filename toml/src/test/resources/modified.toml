@@ -1,6 +1,8 @@
 a = false
 b = 5
 
+# This explains this section.
 [c]
-	d = [ "k", "l" ]
+# More explanation.
+d = [ "k", "l" ]
 

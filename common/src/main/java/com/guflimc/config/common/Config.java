@@ -1,55 +1,23 @@
 package com.guflimc.config.common;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.stream.Collectors;
 
 public interface Config {
-
-    // WRITE
-
-    <T> String write(T config);
-
-    default <T> void write(File file, T config) throws IOException {
-        if ( !file.getParentFile().exists() && !file.getParentFile().mkdirs() ) {
-            throw new IOException("Could not create parent directories for file: " + file.getAbsolutePath());
-        }
-        try (
-                FileWriter writer = new FileWriter(file);
-        ) {
-            write(writer, config);
-        }
-    }
-
-    default <T> void write(OutputStream outputStream, T config) throws IOException {
-        try (
-                OutputStreamWriter writer = new OutputStreamWriter(outputStream);
-        ) {
-            write(writer, config);
-        }
-    }
-
-    default <T> void write(Writer writer, T config) throws IOException {
-        try (
-                BufferedWriter bufferedWriter = new BufferedWriter(writer);
-        ) {
-            bufferedWriter.write(write(config));
-        }
-    }
 
     // READ
 
     <T> T read(String contents, T config);
 
-    default <T> T read(File file, T config) throws IOException {
-        if ( !file.exists() ) {
-            write(file, config);
+    default <T> T read(Path path, T config) throws IOException {
+        if ( !Files.exists(path) ) {
+            write(path, config);
             return config;
         }
 
-        try (
-                FileReader reader = new FileReader(file);
-        ) {
-            return read(reader, config);
-        }
+        return read(Files.readString(path), config);
     }
 
     default <T> T read(InputStream inputStream, T config) throws IOException {
@@ -64,12 +32,31 @@ public interface Config {
         try (
                 BufferedReader bufferedReader = new BufferedReader(reader);
         ) {
-            StringBuilder contents = new StringBuilder();
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                contents.append(line);
-            }
-            return read(contents.toString(), config);
+            String contents = bufferedReader.lines().collect(Collectors.joining(""));
+            return read(contents, config);
         }
     }
+
+    // WRITE
+
+    <T> String write(T config);
+
+    default <T> void write(Path path, T config) throws IOException {
+        Files.createDirectories(path.getParent());
+
+        if ( !Files.exists(path) ) {
+            Files.createFile(path);
+        }
+
+        Files.writeString(path, write(config));
+    }
+
+    default <T> void write(OutputStream outputStream, T config) throws IOException {
+        try (
+                OutputStreamWriter writer = new OutputStreamWriter(outputStream);
+        ) {
+            writer.write(write(config));
+        }
+    }
+
 }
