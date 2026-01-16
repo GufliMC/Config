@@ -1,7 +1,9 @@
 dependencies {
     api project(':common')
 
-    api 'com.electronwill.night-config:toml:3.6.6'
+    api 'io.github.wasabithumb:jtoml:+'
+    api 'io.github.wasabithumb:jtoml-serializer-reflect:+'
+//    api 'com.electronwill.night-config:toml:3.8.3'
 //    api 'com.fasterxml.jackson.dataformat:jackson-dataformat-toml:2.13.0'
     implementation 'org.slf4j:slf4j-api:1.7.25'
 

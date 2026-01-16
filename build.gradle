@@ -2,7 +2,7 @@ plugins {
     id 'pl.allegro.tech.build.axion-release' version '1.13.6'
 }
 
-group 'com.guflimc.config'
+group 'com.gufli.config'
 version = scmVersion.version
 
 def javadocProjects = [project(':common'), project(':toml')]
@@ -15,7 +15,7 @@ subprojects {
     apply plugin: 'java-library'
 
     repositories {
-        maven { url "https://libraries.minecraft.net" }
+        mavenLocal()
     }
 }
 

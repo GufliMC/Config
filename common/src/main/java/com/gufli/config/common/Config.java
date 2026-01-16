@@ -1,4 +1,4 @@
-package com.guflimc.config.common;
+package com.gufli.config.common;
 
 import java.io.*;
 import java.nio.file.Files;

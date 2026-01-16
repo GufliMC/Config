@@ -1,7 +1,7 @@
-package com.guflimc.config.common.test;
+package com.gufli.config.common.test;
 
-import com.guflimc.config.common.ConfigComment;
-import com.guflimc.config.toml.TomlConfig;
+import com.gufli.config.common.ConfigComment;
+import com.gufli.config.toml.TomlConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
