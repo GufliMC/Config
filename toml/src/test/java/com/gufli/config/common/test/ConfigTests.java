@@ -1,6 +1,5 @@
 package com.gufli.config.common.test;
 
-import com.gufli.config.common.ConfigComment;
 import com.gufli.config.toml.TomlConfig;
 import io.github.wasabithumb.jtoml.comment.Comment;
 import io.github.wasabithumb.jtoml.serial.TomlSerializable;
