@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.guflimc.config.common","l":"Config"},{"p":"com.guflimc.config.common","l":"ConfigComment"},{"p":"com.guflimc.config.toml","l":"TomlConfig"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html","k":"18"},{"p":"com.gufli.config.common","l":"Config","k":"10"},{"p":"com.gufli.config.common","l":"ConfigComment","k":"8"},{"p":"com.gufli.config.toml","l":"TomlConfig"}];updateSearchResults();

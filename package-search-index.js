@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.guflimc.config.common"},{"l":"com.guflimc.config.toml"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"l":"com.gufli.config.common"},{"l":"com.gufli.config.toml"}];updateSearchResults();
