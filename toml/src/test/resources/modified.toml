@@ -1,7 +1,7 @@
+# This explains this section.
 a = false
 b = 5
 
-# This explains this section.
 [c]
 # More explanation.
 d = [ "k", "l" ]

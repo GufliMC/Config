@@ -1,8 +1,7 @@
+# This explains this section.
 a = true
 b = 5
 
-# This explains this section.
 [c]
 # More explanation.
-d = ["x", "y", "z"]
-
+d = [ "x", "y", "z" ]

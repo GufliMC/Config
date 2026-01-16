@@ -2,6 +2,8 @@ package com.gufli.config.common.test;
 
 import com.gufli.config.common.ConfigComment;
 import com.gufli.config.toml.TomlConfig;
+import io.github.wasabithumb.jtoml.comment.Comment;
+import io.github.wasabithumb.jtoml.serial.TomlSerializable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -15,12 +17,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ConfigTests {
 
-    private static class ConfigObj {
+    public static class ConfigObj implements TomlSerializable {
 
+        @Comment.Pre("This explains this section.")
         public boolean a = true;
         public int b = 5;
 
-        @ConfigComment("This explains this section.")
         public InnterConfigObj c = new InnterConfigObj();
 
         public ConfigObj() {
@@ -29,9 +31,9 @@ public class ConfigTests {
 
     }
 
-    private static class InnterConfigObj {
+    public static class InnterConfigObj implements TomlSerializable {
 
-        @ConfigComment("More explanation.")
+        @Comment.Pre("More explanation.")
         public List<String> d = List.of("e", "f", "g");
 
     }
